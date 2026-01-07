@@ -13,22 +13,17 @@ export const techStackData: TechStack[] = [
   { name: 'React.js', icon: 'Component', category: 'frontend' },
   { name: 'Next.js', icon: 'Layers', category: 'frontend' },
   { name: 'Tailwind CSS', icon: 'Wind', category: 'frontend' },
-  { name: 'Framer Motion', icon: 'Zap', category: 'frontend' },
 
   // Backend
   { name: 'Node.js', icon: 'Server', category: 'backend' },
-  { name: 'Express.js', icon: 'Cloud', category: 'backend' },
+  { name: 'Python', icon: 'Code', category: 'backend' },
 
   // Database
-  { name: 'MongoDB', icon: 'Database', category: 'database' },
-  { name: 'PostgreSQL', icon: 'Database', category: 'database' },
   { name: 'MySQL', icon: 'Database', category: 'database' },
   { name: 'Firebase', icon: 'Flame', category: 'database' },
 
   // Tools
   { name: 'Git', icon: 'GitBranch', category: 'tools' },
-  { name: 'Docker', icon: 'Container', category: 'tools' },
-  { name: 'AWS', icon: 'Cloud', category: 'tools' },
 
   // Design
   { name: 'Figma', icon: 'Figma', category: 'design' },

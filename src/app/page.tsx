@@ -7,8 +7,8 @@ import { Hero } from '../../src/components/sections/Hero';
 import { About } from '../../src/components/sections/About';
 import { Projects } from '../../src/components/sections/Projects';
 import { TechStack } from '../../src/components/sections/TechStack';
-import { Experience } from '../../src/components/sections/Experience';
 import { Contact } from '../../src/components/sections/Contact';
+import { Certificates } from '../components/sections/Certificates';
 
 export default function Home() {
   return (
@@ -25,7 +25,9 @@ export default function Home() {
         <About />
         <TechStack />
         <Projects />
-        <Experience />
+
+        <Certificates />
+
         <Contact />
       </div>
 
