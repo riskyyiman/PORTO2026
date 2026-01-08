@@ -9,29 +9,38 @@ import { Projects } from '../../src/components/sections/Projects';
 import { TechStack } from '../../src/components/sections/TechStack';
 import { Contact } from '../../src/components/sections/Contact';
 import { Certificates } from '../components/sections/Certificates';
+import { ScrollIndicator } from '../components/ui/ScrollIndicator';
 
 export default function Home() {
   return (
     <main className="relative min-h-screen">
       {/* Background */}
       <DotBackground />
-
-      {/* Navigation */}
+      {/* Navigation & Scroll Indicator */}
       <Navbar />
-
+      <ScrollIndicator /> {/* Komponen baru */}
       {/* Main Content */}
       <div className="relative z-10">
-        <Hero />
-        <About />
-        <TechStack />
-        <Projects />
-
-        <Certificates />
-
-        <Contact />
+        {/* Pastikan setiap komponen memiliki ID yang sesuai */}
+        <section id="hero">
+          <Hero />
+        </section>
+        <section id="about">
+          <About />
+        </section>
+        <section id="techstack">
+          <TechStack />
+        </section>
+        <section id="projects">
+          <Projects />
+        </section>
+        <section id="certificates">
+          <Certificates />
+        </section>
+        <section id="contact">
+          <Contact />
+        </section>
       </div>
-
-      {/* Footer */}
       <Footer />
     </main>
   );
