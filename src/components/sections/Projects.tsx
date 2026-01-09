@@ -17,7 +17,7 @@ export const Projects: React.FC = () => {
   const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 3);
 
   return (
-    <section id="projects" className="relative bg-[#020617] py-24 overflow-hidden">
+    <section id="projects" className="relative bg-[#020617] py-14 overflow-hidden">
       {/* Background Decor */}
       <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] pointer-events-none">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] opacity-40" />

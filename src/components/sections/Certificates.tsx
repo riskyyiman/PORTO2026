@@ -37,7 +37,7 @@ export const Certificates = () => {
   }, [selectedId]);
 
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-24 bg-[#020617] relative overflow-hidden" id="certificates">
+    <section className="py-14 px-6 md:px-12 lg:px-24 bg-[#020617] relative overflow-hidden" id="certificates">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="flex flex-col mb-12 md:mb-16 space-y-4 items-center text-center">

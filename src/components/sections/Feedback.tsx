@@ -99,7 +99,7 @@ export const Feedback = () => {
   };
 
   return (
-    <section id="feedback" className="py-24 px-6 md:px-12 lg:px-24 bg-[#020617] relative overflow-hidden">
+    <section id="feedback" className="py-14 px-6 md:px-12 lg:px-24 bg-[#020617] relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/10 blur-[120px] rounded-full -z-10" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-600/10 blur-[120px] rounded-full -z-10" />

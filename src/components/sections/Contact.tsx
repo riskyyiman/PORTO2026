@@ -51,7 +51,7 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="relative bg-[#020617] py-24 overflow-hidden">
+    <section id="contact" className="relative bg-[#020617] py-14 overflow-hidden">
       {/* --- SUCCESS POPUP (TOAST) --- */}
       <AnimatePresence>
         {showPopup && (
