@@ -2,15 +2,15 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Github, Linkedin, Twitter, Code2, Terminal } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Twitter, Code2, Mail } from 'lucide-react';
 import { SplitText } from '../ui/SplitText';
 import { Button } from '../ui/Button';
 import { Magnetic } from '../ui/Magnetic';
 
 const socialLinks = [
-  { href: 'https://github.com', icon: Github, label: 'GitHub' },
-  { href: 'https://linkedin.com', icon: Linkedin, label: 'LinkedIn' },
-  { href: 'https://twitter.com', icon: Twitter, label: 'Twitter' },
+  { href: 'https://github.com/riskyyiman', icon: Github, label: 'GitHub' },
+  { href: 'https://www.linkedin.com/in/riskyimanlaelprasetio/', icon: Linkedin, label: 'LinkedIn' },
+  { href: 'https://mailto:riskyiman699@gmailcom', icon: Mail, label: 'Mail' },
 ];
 
 export const Hero: React.FC = () => {

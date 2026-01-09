@@ -10,18 +10,19 @@ import { TechStack } from '../../src/components/sections/TechStack';
 import { Contact } from '../../src/components/sections/Contact';
 import { Certificates } from '../components/sections/Certificates';
 import { ScrollIndicator } from '../components/ui/ScrollIndicator';
+import { Chatbot } from '../../src/components/ui/Chatbot';
+import { VisitorCounter } from '../components/ui/VisitorCounter';
+import { Feedback } from '../components/sections/Feedback';
 
 export default function Home() {
   return (
     <main className="relative min-h-screen">
-      {/* Background */}
       <DotBackground />
-      {/* Navigation & Scroll Indicator */}
       <Navbar />
-      <ScrollIndicator /> {/* Komponen baru */}
+      <ScrollIndicator />
+
       {/* Main Content */}
       <div className="relative z-10">
-        {/* Pastikan setiap komponen memiliki ID yang sesuai */}
         <section id="hero">
           <Hero />
         </section>
@@ -37,11 +38,19 @@ export default function Home() {
         <section id="certificates">
           <Certificates />
         </section>
+        <section id="feedback">
+          <Feedback />
+        </section>
         <section id="contact">
           <Contact />
         </section>
       </div>
       <Footer />
+      {/* Widget Melayang */}
+      <div className="fixed bottom-6 left-6 z-[9999]">
+        <VisitorCounter />
+      </div>
+      <Chatbot />
     </main>
   );
 }

@@ -2,15 +2,19 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, Star } from 'lucide-react';
+import { ExternalLink, Github, Star, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import { SpotlightCard } from '../ui/SpotlightCard';
 import { projectsData } from '../../data/projects';
 
 export const Projects: React.FC = () => {
   const [filter, setFilter] = useState<'all' | 'highlighted'>('all');
+  const [showAll, setShowAll] = useState(false);
 
   const filteredProjects = filter === 'all' ? projectsData : projectsData.filter((project) => project.isHighlighted);
+
+  // Batasi hanya 3 project jika showAll false
+  const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 3);
 
   return (
     <section id="projects" className="relative bg-[#020617] py-24 overflow-hidden">
@@ -37,7 +41,10 @@ export const Projects: React.FC = () => {
               ].map((tab) => (
                 <button
                   key={tab.id}
-                  onClick={() => setFilter(tab.id as any)}
+                  onClick={() => {
+                    setFilter(tab.id as any);
+                    setShowAll(false); // Reset view saat filter berubah
+                  }}
                   className={`relative px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${filter === tab.id ? 'text-white' : 'text-slate-400 hover:text-white'}`}
                 >
                   {filter === tab.id && <motion.div layoutId="activeProjectFilter" className="absolute inset-0 bg-blue-600 rounded-full" transition={{ type: 'spring', stiffness: 300, damping: 30 }} />}
@@ -50,11 +57,9 @@ export const Projects: React.FC = () => {
           {/* Projects Grid */}
           <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
             <AnimatePresence mode="popLayout">
-              {filteredProjects.map((project) => (
+              {displayedProjects.map((project) => (
                 <motion.div key={project.id} layout initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }} transition={{ duration: 0.4 }}>
-                  {/* UKURAN TETAP: h-[480px] */}
                   <SpotlightCard className="group flex flex-col h-[480px] bg-slate-900/40 border-white/5 backdrop-blur-sm rounded-2xl overflow-hidden transition-all duration-500 hover:border-white/20 shadow-2xl">
-                    {/* Image Container */}
                     <div className="relative overflow-hidden h-48 shrink-0">
                       <Image src={project.image} alt={project.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
                       {project.isHighlighted && (
@@ -67,18 +72,13 @@ export const Projects: React.FC = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent opacity-60" />
                     </div>
 
-                    {/* Content Section */}
                     <div className="p-6 flex flex-col flex-1 min-h-0">
                       <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors duration-300">{project.title}</h3>
-
-                      {/* DESCRIPTION */}
                       <div className="relative flex-1 overflow-hidden mt-2">
                         <p className="text-slate-400 text-sm leading-relaxed transition-all duration-700 ease-in-out line-clamp-3 group-hover:line-clamp-none">{project.description}</p>
                       </div>
 
-                      {/* Footer: Tech Stack (Tags) & Links */}
                       <div className="mt-auto pt-4 space-y-4 shrink-0">
-                        {/* Menampilkan semua tags sesuai data */}
                         <div className="flex flex-wrap gap-2">
                           {project.tags.map((tag) => (
                             <span key={tag} className="px-2.5 py-1 text-[10px] font-medium rounded-lg bg-blue-500/10 text-blue-400 border border-blue-500/20 whitespace-nowrap">
@@ -87,7 +87,6 @@ export const Projects: React.FC = () => {
                           ))}
                         </div>
 
-                        {/* Links */}
                         <div className="flex gap-4 pt-4 border-t border-white/5">
                           {project.liveUrl && (
                             <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-blue-400 transition-colors">
@@ -109,6 +108,19 @@ export const Projects: React.FC = () => {
               ))}
             </AnimatePresence>
           </motion.div>
+
+          {/* See All Button */}
+          {!showAll && filteredProjects.length > 3 && (
+            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="mt-16 text-center">
+              <button
+                onClick={() => setShowAll(true)}
+                className="group inline-flex items-center gap-2 px-8 py-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-500/50 rounded-full text-white font-medium transition-all duration-300"
+              >
+                See All Projects
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </button>
+            </motion.div>
+          )}
         </div>
       </div>
     </section>
