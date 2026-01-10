@@ -25,18 +25,3 @@ Website ini mengusung tema **Dark Minimalist** dengan sentuhan futuristik:
 * **Warna:** Latar belakang gelap (Charcoal/Black) dengan aksen warna neon hijau (`#4ade80`) untuk highlight elemen penting.
 
 ---
-
-## 📁 Struktur Folder
-
-Arsitektur project ini mengikuti standar Next.js App Router:
-
-```bash
-├── public/              # Aset statis (ikon, sertifikat, logo)
-├── src/
-│   ├── app/             # Routing & Layout utama
-│   ├── components/      # Komponen UI yang reusable
-│   │   ├── layout/      # Navbar, Footer
-│   │   └── sections/    # About, Certificates, Contact, Feedback
-│   └── styles/          # Konfigurasi CSS Global
-├── tailwind.config.ts   # Konfigurasi Tailwind
-└── package.json         # Dependensi project
