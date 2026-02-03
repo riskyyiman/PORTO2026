@@ -25,3 +25,4 @@ Website ini mengusung tema **Dark Minimalist** dengan sentuhan futuristik:
 * **Warna:** Latar belakang gelap (Charcoal/Black) dengan aksen warna neon hijau (`#4ade80`) untuk highlight elemen penting.
 
 ---
+copyright by risky.
